@@ -1,3 +1,4 @@
 Eerste lijn test
 De tweede lijn conflict
-Wijzigen aan deze file voor branch sample
+Branch master lijn nakijken
+
