@@ -1,0 +1,52 @@
+/* Navigatie Logo */
+.navbar-brand img {
+    height: 4rem;
+}
+
+/* Navigatie Font, Kleuren en Active*/
+.navbar {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.nav-item {
+    padding: 0.1rem;
+}
+
+
+.nav-link  {
+    color: #ffffff !important;
+}
+
+.nav-link.active,
+.nav-link:hover  {
+    color: #00BFFF !important;
+}
+
+/* Nav Login Button */
+.navbar-btn {
+    font-weight: 700 !important;
+    font-size: 1.3rem !important;
+    color: #ffffff !important;
+    background-color: #00BFFF !important;
+    padding: 1rem 2rem !important;
+}
+
+.navbar-btn:hover {
+    color: #00BFFF !important;
+    background-color: #ffffff !important;
+    padding: 1rem 2rem !important;
+}
+
+/* Foto's CSS */
+.figure-caption {
+    font-size: 1.5rem !important;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+body{
+    background-color: lightgray !important;
+}
