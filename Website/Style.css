@@ -21,7 +21,7 @@
 
 .nav-link.active,
 .nav-link:hover  {
-    color: #00BFFF !important;
+    color: #EDC967 !important;
 }
 
 /* Nav Login Button */
@@ -29,13 +29,13 @@
     font-weight: 700 !important;
     font-size: 1.3rem !important;
     color: #ffffff !important;
-    background-color: #00BFFF !important;
+    background-image: linear-gradient(to right,#AE8625, #F7BD69, #D2AC47, #EDC967) !important;
     padding: 1rem 2rem !important;
 }
 
 .navbar-btn:hover {
-    color: #00BFFF !important;
-    background-color: #ffffff !important;
+    color: #EDC967 !important;
+    background-color: transparant !important;
     padding: 1rem 2rem !important;
 }
 
