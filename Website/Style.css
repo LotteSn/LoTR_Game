@@ -1,0 +1,68 @@
+/* Navigatie Logo */
+.navbar-brand img {
+    height: 2.5rem;
+}
+
+/* Navigatie Font, Kleuren en Active*/
+.navbar {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+.nav-link  {
+    color: #ffffff !important;
+}
+
+.nav-link.active,
+.nav-link:hover  {
+    color: #EDC967 !important;
+}
+
+/* Nav Login Button */
+.navbar-btn {
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    color: #000000 !important;
+    background-image: linear-gradient(to right,#AE8625, #F7BD69, #D2AC47, #EDC967) !important;
+    padding: 0.5rem 2rem !important;
+}
+
+.navbar-btn:hover {
+    color: #EDC967 !important;
+    background-image: linear-gradient(to right,#000000, #000000, #000000, #000000) !important;
+}
+
+/* Text over Foto's */
+.image {
+    position: relative;
+    width: 100%;
+}
+
+.image__img {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    font-weight: 600;
+    opacity: 1;
+    transition: background 0.4s;
+    border-radius: 4px;
+}
+.image__overlay:hover {
+    background: rgba(0,0,0,0.6);
+}
+
