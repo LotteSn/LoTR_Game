@@ -66,3 +66,35 @@
     background: rgba(0,0,0,0.6);
 }
 
+/* Slideshow op LoTRPagina */
+#carouselExampleSlidesOnly {
+    position: fixed;
+    height: 100vh;
+}
+
+/* Button in midden van de website */
+#StartButton {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* Button opmaak */
+ #StartButtonCSS {
+    padding: 10vh 14vh;
+    font-size: 8vh;
+    font-weight: 700;
+    border-radius: 20px;
+ }
+
+ #StartButtonCSS:hover {
+     background-color: #0000ff;
+ }
