@@ -1,32 +1,44 @@
 <!DOCTYPE html>
-<html lang="nl-BE">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login-page</title>
-    <!--Favicon-->
-    <link rel="icon" type="image/png" sizes="16x16" href="/">
+    <title>Login-Pagina</title>
+    <link rel="stylesheet" href="/LoTR/LoTR_Game/Login/LoginPagina.css">
 </head>
 <body>
-    <form action="#" method="POST">
+    <form action="/LoTR/LoTR_Game/Website/LandingPagina.html" method="GET">
         <fieldset>
-            <legend>Login</legend>           
-            <div>
-                <label for="email">Email adres </label><br>
-                <input type="email" name="email" id="email" placeholder="name@example.com">
-            </div><br>
-            <div>
-                <label for="Wachtwoord">Wachtwoord </label><br>
-                <input type="Wachtwoord" name="Wachtwoord" id="Wachtwoord" placeholder="Wachtwoord"><br>
-                <span class="Wachtwoord"><a href="#">Wachtwoord vergeten?</a></span>
-            </div><br>
-            <div class="button">
-                <button type="submit" name="action" id="send" value="user-insert">Login</button>
-                <input type="checkbox" unchecked="unchecked" name="remember"> 
-                <label for="remember">Remember me</label>
+            <div class="center">
+                <div class="form">
+                    <div class="avatar">
+                        <img src="/LoTR/LoTR_Game/Login/images/Logo.png" alt="">
+                    </div>
+                    <div class="header">
+                        User login
+                    </div>
+                    <div class="element">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="username">
+                    </div>
+                    <div class="element">
+                        <label for="Wachtwoord">Wachtwoord</label>
+                        <input type="Wachtwoord" id="Wachtwoord" placeholder="Wachtwoord">
+                        <span ><a class="Wachtwoord" href="#">Wachtwoord vergeten?</a></span>
+                    </div>
+                    <div class="remember">
+                        <input type="checkbox" unchecked="unchecked" name="remember"> 
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <div class="element">
+                    <button type="submit" name="action" id="login" value="user-insert">Login</button>
+                    </div>
+                    <div class="element">
+                    <span ><a id="Registreeren" href="#">Moet nog registreeren</a></span>
+                    </div>
+                </div>
             </div>
-            <span class="Registreeren"><a href="#">Moet nog registreeren</a></span>
         </fieldset>
     </form>
 </body>

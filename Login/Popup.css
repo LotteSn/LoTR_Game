@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-      function openLoginForm(){
-    document.body.classList.add("showLoginForm");
-  }
-  function closeLoginForm(){
-    document.body.classList.remove("showLoginForm");
-  }
-    </script> 
-    <style>
-        body {
+body {
   font-family:"Raleway";
 }
 .center {
@@ -34,13 +18,15 @@
   display:none;
 }
 .popup {
+  border: solid 0.1em black;
+  border-radius: 10px 10px 10px 10px ;
   position:absolute;
   top:-150%;
   left:50%;
   transform:translate(-50%,-50%) scale(1.15);
   width:300px;
-  height:440px;
-  background:#f5f5f5;
+  height:470px;
+  background:#343a40;
   z-index:2;
   opacity:0;
   box-shadow:5px 5px 3px rgba(0,0,0,0.2);
@@ -58,8 +44,8 @@ body.showLoginForm .popup {
   position:absolute;
   top:-10px;
   right:-10px;
-  width:40px;
-  height:40px;
+  width:30px;
+  height:30px;
   background:#555;
   color:#f5f5f5;
   font-size:25px;
@@ -80,7 +66,7 @@ body.showLoginForm .popup {
   text-align:center;
   font-size:20px;
   font-weight:600;
-  color:#222;
+  color:white;
   margin:20px 0px;
 }
 .popup .form .element {
@@ -89,7 +75,7 @@ body.showLoginForm .popup {
 .popup .form .element label {
   display:block;
   font-size:14px;
-  color:#222;
+  color:white;
   margin-bottom:5px;
 }
 .popup .form .element input {
@@ -100,6 +86,15 @@ body.showLoginForm .popup {
   border:1px solid #aaa;
   background:#eee;
   border-radius:5px;
+}
+.popup .form .remember{
+width:100%;
+padding:8px 10px;
+box-sizing:border-box;
+outline:none;
+border-radius:5px;
+color: white;
+padding:8px 20px;
 }
 .popup .form .element button {
   margin-top:5px;
@@ -112,39 +107,6 @@ body.showLoginForm .popup {
   font-weight:600;
   border-radius:5px;
   cursor:pointer;
-  background:#4889da;
+  background-image: linear-gradient(to right,#AE8625, #F7BD69, #D2AC47, #EDC967);
   color:#f5f5f5;
 }
-    </style>
-</head>
-<body>
-    <div class="center">
-        <button onclick="openLoginForm()">The one</button>
-      </div>
-      <div class="popup-overlay"></div>
-      <div class="popup">
-        <div class="popup-close" onclick="closeLoginForm()">&times;</div>
-        <div class="form">
-          <div class="avatar">
-            <img src="https://bit.ly/31pHqJb" alt="">
-          </div>
-          <div class="header">
-            User login
-          </div>
-          <div class="element">
-            <label for="username">Username</label>
-            <input type="text" id="username">
-          </div>
-          <div class="element">
-            <label for="Wachtwoord">Wachtwoord</label>
-            <input type="Wachtwoord" id="Wachtwoord">
-          </div>
-          
-          <div class="element">
-            <button type="submit" name="action" id="login" value="user-insert">Login</button>
-          </div>
-          
-        </div>
-      </div>
-</body>
-</html>

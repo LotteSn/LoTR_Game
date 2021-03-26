@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/LoTR/LoTR_Game/Login/Popup.css">
+    <script src="/LoTR/LoTR_Game/Login/Popup.js"></script>
+</head>
+<body>
+    <div class="center">
+        <button onclick="openLoginForm()">The one</button>
+      </div>
+      <div class="popup-overlay"></div>
+      <div class="popup">
+        <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+        <div class="form">
+          <div class="avatar">
+            <img src="/LoTR/LoTR_Game/Login/images/Logo.png" alt="">
+          </div>
+          <div class="header">
+            User login
+          </div>
+          <div class="element">
+            <label for="username">Username</label>
+            <input type="text" id="username">
+          </div>
+          <div class="element">
+            <label for="Wachtwoord">Wachtwoord</label>
+            <input type="Wachtwoord" id="Wachtwoord">
+          </div>
+          <div class="remember">
+            <input type="checkbox" unchecked="unchecked" name="remember"> 
+            <label for="remember">Remember me</label>
+        </div>
+          <div class="element">
+            <button type="submit" name="action" id="login" value="user-insert">Login</button>
+          </div>
+          
+        </div>
+      </div>
+</body>
+</html>
