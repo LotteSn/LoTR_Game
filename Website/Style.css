@@ -1,39 +1,42 @@
 /* Navigatie Logo */
+
 .navbar-brand img {
     height: 2.5rem;
 }
 
 /* Navigatie Font, Kleuren en Active*/
+
 .navbar {
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
 }
 
-.nav-link  {
+.nav-link {
     color: #ffffff !important;
 }
 
-.nav-link.active,
-.nav-link:hover  {
+.nav-link.active, .nav-link:hover {
     color: #EDC967 !important;
 }
 
 /* Nav Login Button */
+
 .navbar-btn {
     font-weight: 700 !important;
     font-size: 1rem !important;
     color: #000000 !important;
-    background-image: linear-gradient(to right,#AE8625, #F7BD69, #D2AC47, #EDC967) !important;
+    background-image: linear-gradient(to right, #AE8625, #F7BD69, #D2AC47, #EDC967) !important;
     padding: 0.5rem 2rem !important;
 }
 
 .navbar-btn:hover {
     color: #EDC967 !important;
-    background-image: linear-gradient(to right,#000000, #000000, #000000, #000000) !important;
+    background-image: linear-gradient(to right, #000000, #000000, #000000, #000000) !important;
 }
 
 /* Text over Foto's */
+
 .image {
     position: relative;
     width: 100%;
@@ -62,23 +65,42 @@
     transition: background 0.4s;
     border-radius: 4px;
 }
+
 .image__overlay:hover {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 /* Slideshow op LoTRPagina */
+
 #carouselExampleSlidesOnly {
     position: fixed;
-    height: 100vh;
+}
+
+/* Achtergrond Images voor LoTRPagina (nog niet in orde) */
+
+.img-responsive {
+    height: auto;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .img-responsive {
+        height: fit-content !important;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* Button in midden van de website */
-#StartButton {
+
+#StartButtonContainer {
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-
     position: absolute;
     right: 0;
     left: 0;
@@ -88,13 +110,87 @@
 }
 
 /* Button opmaak */
- #StartButtonCSS {
-    padding: 10vh 14vh;
+
+#StartButtonCss {
+    padding: 8vh 12vh;
     font-size: 8vh;
     font-weight: 700;
     border-radius: 20px;
- }
+}
 
- #StartButtonCSS:hover {
-     background-color: #0000ff;
- }
+#StartButtonCSS:hover {
+    background-color: #0000ff;
+}
+
+/* Plaats de quote pop up in het midden van de pagina en Make up */
+
+.modal {
+    text-align: center;
+}
+
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 20%;
+    vertical-align: middle;
+}
+
+.modal-dialog {
+    vertical-align: middle;
+}
+
+.modal-content {
+    background-color: lightgrey !important;
+    font-weight: 600;
+}
+
+
+input {
+    border-radius: 50px !important;
+    padding: 0 6rem 0 6rem !important;
+    font-size: 1.5rem !important;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
