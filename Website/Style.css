@@ -95,7 +95,6 @@
 }
 
 /* Button in midden van de website */
-
 #StartButtonContainer {
     margin: auto;
     display: flex;
@@ -112,7 +111,7 @@
 /* Button opmaak */
 
 #StartButtonCss {
-    padding: 8vh 12vh;
+    padding: 4vh 6vh;
     font-size: 8vh;
     font-weight: 700;
     border-radius: 20px;
