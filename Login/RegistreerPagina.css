@@ -75,10 +75,6 @@ body {
     background-image: linear-gradient(to right,#AE8625, #F7BD69, #D2AC47, #EDC967);
     color:#f5f5f5;
     }
-
-    a{
-        color: lightgray;
-    }
      
     .header {
         margin:30px 0px 20px;

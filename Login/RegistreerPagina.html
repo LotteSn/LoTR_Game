@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/LoTR/LoTR_Game/Login/images/Logo.png">
+    <link rel="stylesheet" href="/LoTR/LoTR_Game/Login/RegistreerPagina.css">
+    <title>Registratie-Pagina</title>
+</head>
+<body class="flex-center">
+    <form action="/LoTR/LoTR_Game/Website/LandingPagina.html" method="GET" >
+            <div class="center">
+                    <div class="header">
+                        <img src="/LoTR/LoTR_Game/Login/images/Logo.png" alt="">
+                        <label>Create an account</label> 
+                    </div>
+                    <div>
+                        <label for="gebruiker">Gebruiker</label>
+                        <input type="text" id="gebruiker" placeholder="gebruiker">
+                    </div>
+                    <div class="flex-row">
+                        <div>
+                            <label for="voornaam">Voornaam </label>
+                            <input type="text" name="voornaam" id="voornaam" autofocus placeholder="voornaam">
+                        </div>
+                        <div>
+                            <label for="Familienaam">Familienaam </label>
+                            <input type="text" name="Familienaam" id="Familienaam" placeholder="Familienaam">
+                        </div>
+                    </div>
+                    <div >
+                        <label for="email">Email adres </label>
+                        <input type="email" name="email" id="email" placeholder="name@example.com">
+                    </div>
+                    <div >
+                        <label for="Wachtwoord">Wachtwoord</label>
+                        <input type="password" id="Wachtwoord" placeholder="Wachtwoord">
+                    </div>
+                    <div >
+                        <label for="Wachtwoord2">Bevestig Wachtwoord </label>
+                        <input type="password" name="Wachtwoord2" id="Wachtwoord2">
+                    </div>
+                    
+                    <div class="remember">
+                        <input type="checkbox" unchecked="unchecked" name="remember"> 
+                        <label class="inline-block" for="remember">Remember me</label>
+                    </div>
+                    <div >
+                    <button type="submit" name="action" id="login" value="user-insert">Registreer</button>
+                    </div>
+                    <div >
+                        <span ><a id="Registreeren" href="/LoTR/LoTR_Game/Login/LoginPagina.html">Al geregistreerd</a></span>
+                        </div>
+            </div>
+    </form>
+</body>
+</html>
