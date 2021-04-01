@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/LoTR/LoTR_Game/Login/images/Logo.png">
+    <link rel="stylesheet" href="/LoTR/LoTR_Game/Login/LoginPagina.css">
+    <title>Login-Pagina</title>
+</head>
+<body class="flex-center">
+    <form action="/LoTR/LoTR_Game/Website/LandingPagina.html" method="GET" >
+            <div class="center">
+                    <div class="header">
+                        <img src="/LoTR/LoTR_Game/Login/images/Logo.png" alt="">
+                        <label>Create an account</label> 
+                    </div>
+                    <div>
+                        <label for="gebruiker">Gebruiker</label>
+                        <input type="text" id="gebruiker" placeholder="gebruiker">
+                    </div>
+                    <div >
+                        <label for="Wachtwoord">Wachtwoord</label>
+                        <input type="password" id="Wachtwoord" placeholder="Wachtwoord">                        
+                        <span ><a class="Wachtwoord" href="#">Wachtwoord vergeten?</a></span>
+                    </div>                    
+                    <div class="remember">
+                        <input type="checkbox" unchecked="unchecked" name="remember"> 
+                        <label class="inline-block" for="remember">Remember me</label>
+                    </div>
+                    <div >
+                    <button type="submit" name="action" id="login" value="user-insert">Login</button>
+                    </div>
+                    <div >
+                        <span ><a id="Registreeren" href="/LoTR/LoTR_Game/Login/RegistreerPagina.html">Moet nog registreeren</a></span>
+                        </div>
+            </div>
+    </form>
+</body>
+</html>
