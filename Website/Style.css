@@ -143,13 +143,6 @@
     font-weight: 600;
 }
 
-
-input {
-    border-radius: 50px !important;
-    padding: 0 6rem 0 6rem !important;
-    font-size: 1.5rem !important;
-}
-
 * {
     box-sizing: border-box;
   }
@@ -193,3 +186,8 @@ input {
       margin-top: 0;
     }
   }
+
+.btn-primary {
+    border-radius: 15px !important;
+    padding: 0.5rem 5rem !important;
+}

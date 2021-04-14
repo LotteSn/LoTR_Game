@@ -40,8 +40,9 @@
                     <li class="nav-item px-2"><a href="" class="nav-link">Lego</a></li>
                 </ul>
                 <!-- Nav Login knop-->
-                <form class="navbar-nav ml-auto" action="/LoTR/LoTR_Game/Login/LoginPagina.html" method="GET">
-                    <button type="submit" class="btn navbar-btn" > Log in</button>
+                <form class="navbar-nav ml-auto">
+                    <a href="#" data-toggle="modal" data-target="#myModal">
+                        <button type="submit" class="btn navbar-btn"> Log in</button></a>
                 </form>
             </div>
         </div>
@@ -53,15 +54,16 @@
             <div class="row">
                 <div class="col-lg-6 mb-2 px-1">
                     <div class="image">
-                        <img class="image__img" src="img/Voorbeeld_foto1.jpeg" alt="Foto1">
-                        <div class="image__overlay">
-                            <div class="image__title">The One</div>
-                        </div>
+                        <a href="LoTRPagina.html"><img class="image__img" src="img/The_One.jpg" alt="Picture of the ring from Lord of The Rings">
+                            <div class="image__overlay">
+                                <div class="image__title">The One</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-2 px-1">
                     <div class="image">
-                        <img class="image__img" src="img/Voorbeeld_foto2.jpg" alt="Foto2">
+                        <img class="image__img" src="img/Fifa.jpg" alt="Picture of the Fifa Game">
                         <div class="image__overlay">
                             <div class="image__title">Fifa</div>
                         </div>
@@ -73,7 +75,7 @@
             <div class="row">
                 <div class="col-lg-6 mb-2 px-1">
                     <div class="image">
-                        <img class="image__img" src="img/Voorbeeld_foto3.jpg" alt="Foto3">
+                        <img class="image__img" src="img/Fortnite.jpg" alt="Picture of the Fortnite Game">
                         <div class="image__overlay">
                             <div class="image__title">Fortnite</div>
                         </div>
@@ -81,7 +83,7 @@
                 </div>
                 <div class="col-lg-6 mb-2 px-1">
                     <div class="image">
-                        <img class="image__img" src="img/Voorbeeld_foto4.jpg" alt="Foto4">
+                        <img class="image__img" src="img/Lego.jpg" alt="Picture of Legos">
                         <div class="image__overlay">
                             <div class="image__title">Lego</div>
                         </div>
@@ -91,6 +93,82 @@
         </div>
     </section>
 
+    <!-- Modal Pop up Login -->
+    <div class="container" id="fromContainer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h1>Login</h1>
+                                    <form action="/action_page.php">
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="characterName">E-mail </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="movieName">Password </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="password" name="password">
+                                            </div>
+                                        </div>
+                                    </form><br>
+                                    <button type="submit" class="btn btn-primary"> Log in</button></a><br><br>
+                                    <a href="#" data-toggle="modal" data-target="#myModalRegister" data-dismiss="modal">Don't have an account yet?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="myModalRegister">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h1>Register</h1>
+                                    <form action="/action_page.php">
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="characterName">Username </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="username" name="username">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="characterName">E-mail </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="movieName">Password </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="password" name="password">
+                                            </div>
+                                        </div>
+                                    </form><br>
+                                    <button type="submit" class="btn btn-primary"> Create Account</button></a><br><br>
+                                    <a href="#" data-toggle="modal" data-target="#myModal" data-dismiss="modal">Already have an account.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
