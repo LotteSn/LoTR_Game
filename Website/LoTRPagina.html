@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col text-center">
                 <a href="#" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
-                    <button onClick="this.style.visibility= 'hidden';" class="btn btn-primary" id="StartButtonCss">Start
+                    <button onClick="this.style.visibility= 'hidden';" class="btn btn-start" id="StartButtonCss">Start
                         Game</button>
                 </a>
             </div>
@@ -110,7 +110,7 @@
                                         </div>
                                     </form><br>
                                     <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
-                                        data-target="#myModalCorrect"><input class="btn btn-primary"
+                                        data-target="#myModalCorrect"><input id="btn-check" class="btn"
                                             data-dismiss="modal" type="button" value="Check"></a>
                                 </div>
                             </div>
@@ -122,13 +122,51 @@
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div class="container">
-                                    <h1>Good Job! | Nice Try</h1>
+                                    <h1>Good Job you guessed right!</h1>
                                 </div>
                                 <p>The answer is:</p>
                                 <p>Quote</p>
                                 <p>Character Name, movie</p>
                                 <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal"><input
-                                        class="btn btn-primary mr-auto" data-dismiss="modal" type="button"
+                                        id="btn-again" class="btn mr-auto" data-dismiss="modal" type="button"
+                                        value="Play Again"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="myModalHint">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h1>Quote</h1>
+                                <div class="container">
+                                    <h1>Nice Try here's a hint</h1>
+                                </div>
+                                <p>Insert 4 char pics</p>
+                                <select id="movieName" name="movieName">
+                                    <option value="movie1">The Fellowship of the Ring</option>
+                                    <option value="movie2">The Two Towers</option>
+                                    <option value="movie3">The Return of the King</option>
+                                </select>
+                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal"><input
+                                        id="btn-again" class="btn mr-auto" data-dismiss="modal" type="button"
+                                        value="Check"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="myModalInCorrect">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h1>You didn't get the answer</h1>
+                                </div>
+                                <p>The answer is:</p>
+                                <p>Quote</p>
+                                <p>Character Name, movie</p>
+                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal"><input
+                                        id="btn-again" class="btn mr-auto" data-dismiss="modal" type="button"
                                         value="Play Again"></a>
                             </div>
                         </div>
