@@ -92,47 +92,42 @@
 /*LOTR PAGE*/
 /*START BUTTON*/
 #StartButtonCss {
-    padding: 4vh 6vh !important;
-    font-size: 8vh !important;
-    font-weight: 700 !important;
-    border-radius: 20px !important;
+    padding: 4vh 6vh;
+    margin-top: 50%;
+    font-size: 8vh;
+    font-weight: 700;
+    border-radius: 20px;
 }
 
-/* Button in midden van de website */
 #StartButtonContainer {
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+    position: center;
 }
 
 /* Slideshow op LoTRPagina */
 
 #carouselExampleSlidesOnly {
-    position: fixed;
+    position: fixed; /* laten staan anders komt voor button */
 }
 
 .img-responsive {
-    height: auto;
-    width: 100%;
+    height:initial;
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
     .img-responsive {
-        height: fit-content;
+        height: 100%;
         width: 100%;
         margin: auto;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-size: cover;
     }
-}
+} */
 
 /* Plaats de quote pop up in het midden van de pagina en Make up */
 .modal {
