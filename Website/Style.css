@@ -1,3 +1,6 @@
+body{
+    height: fit-content !important;
+}
 /* #fromContainer {
     background-color: gray;
     opacity: 0.5;
@@ -56,6 +59,10 @@
 
 /*MAIN*/
 /* Text over Foto's */
+.container-fluid{
+    height: 100%;
+}
+
 .image {
     position: relative;
     width: 100%;
@@ -91,7 +98,7 @@
 
 /*LOTR PAGE*/
 /*START BUTTON*/
-#StartButtonCss {
+#startButtonCss {
     padding: 4vh 6vh;
     margin-top: 50%;
     font-size: 8vh;
@@ -99,7 +106,7 @@
     border-radius: 20px;
 }
 
-#StartButtonContainer {
+#startButtonContainer {
     margin: auto;
     display: flex;
     align-items: center;
