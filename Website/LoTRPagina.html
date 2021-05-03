@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <!-- Titel en Favicon -->
-    <title>Home</title>
+    <title>The One</title>
     <link rel="icon" href="img/RingIcon.png">
 
     <!-- CSS -->
@@ -16,9 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </head>
-
 
 <body>
     <!-- Navigatie Menu -->
@@ -60,14 +58,15 @@
         </div>
     </div>
 
- <!-- Start Button -->
- <div class="container" id="StartButtonContainer">
-    <div class="row">
-        <div class="col text-center">
-            <a href="#" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
-                <button onClick="this.style.visibility= 'hidden';" class="btn btn-primary" id="StartButtonCss">Start
-                    Game</button>
-            </a>
+    <!-- Start Button -->
+    <div class="container" id="startButtonContainer">
+        <div class="row">
+            <div class="col text-center">
+                <a href="#" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
+                    <button onClick="getQuote()" class="btn btn-start" id="startButtonCss">Start
+                        Game</button> <!-- onClick="this.style.visibility= 'hidden';" -->
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -82,7 +81,7 @@
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div class="container">
-                                    <h1>Quote</h1>
+                                    <h1 id="myQuote"></h1>
                                     <form action="/action_page.php">
                                         <div class="row">
                                             <div class="col-25">
@@ -108,9 +107,10 @@
                                                 </select>
                                             </div>
                                         </div>
-                                    </form><br>
+                                    </form>
+                                    <br>
                                     <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
-                                        data-target="#myModalCorrect"><input class="btn btn-primary"
+                                        data-target="#myModalCorrect"><input id="btn-check" class="btn"
                                             data-dismiss="modal" type="button" value="Check"></a>
                                 </div>
                             </div>
@@ -122,14 +122,52 @@
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div class="container">
-                                    <h1>Good Job! | Nice Try</h1>
+                                    <h1>Good Job you guessed right!</h1>
                                 </div>
                                 <p>The answer is:</p>
-                                <p>Quote</p>
+                                <p id="myQuote"></p>
                                 <p>Character Name, movie</p>
-                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal"><input
-                                        class="btn btn-primary mr-auto" data-dismiss="modal" type="button"
-                                        value="Play Again"></a>
+                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
+                                    data-target="#myModal"><input id="btn-again" class="btn mr-auto"
+                                        data-dismiss="modal" type="button" value="Play Again"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="myModalHint">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h1 id="myQuote"></h1>
+                                <div class="container">
+                                    <h1>Nice Try here's a hint</h1>
+                                </div>
+                                <p>Insert 4 char pics</p>
+                                <select id="movieName" name="movieName">
+                                    <option value="movie1">The Fellowship of the Ring</option>
+                                    <option value="movie2">The Two Towers</option>
+                                    <option value="movie3">The Return of the King</option>
+                                </select>
+                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
+                                    data-target="#myModal"><input id="btn-again" class="btn mr-auto"
+                                        data-dismiss="modal" type="button" value="Check"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="myModalInCorrect">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h1>You didn't get the answer</h1>
+                                </div>
+                                <p>The answer is:</p>
+                                <p id="myQuote"></p>
+                                <p>Character Name, movie</p>
+                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
+                                    data-target="#myModal"><input id="btn-again" class="btn mr-auto"
+                                        data-dismiss="modal" type="button" value="Play Again"></a>
                             </div>
                         </div>
                     </div>
@@ -138,7 +176,43 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    <script>
+        var token = "ZY35L0ArKx5aX1l_Aoqo"
+        var url = "https://the-one-api.dev"
+        $.ajax({
+            url: url,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + token)
+            },
+        })
+            .done(function (data) {
+                $.each(data, function (key, value) {
+                    // Do Something
+                })
+            })
+            .fail(function (jqXHR, textStatus) {
+                alert("Error: " + textStatus);
+            })
 
+        document.getElementById("startButtonContainer").onclick = function () { getQuote() };
+        document.getElementById("myQuote").onclick = function () { getQuote() };
+        var id = Math.floor(Math.random() * 101); //random getal 0-100 => hoeveel quotes? 
+
+        function getQuote() {
+            var sUrl = `https://the-one-api.dev/v2/quote/${id}`
+
+            $.get(sUrl)
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function (oError) {
+                    console.log(oError);
+                });
+        }
+    </script>
 </body>
 
 </html>
