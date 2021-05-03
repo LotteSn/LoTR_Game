@@ -1,17 +1,32 @@
-/* Navigatie Logo */
+body{
+    height: fit-content !important;
+}
+/* #fromContainer {
+    background-color: gray;
+    opacity: 0.5;
+} */
 
-.navbar-brand img {
-    height: 2.5rem;
+/*ALL*/
+/*ALL BUTTONS*/
+.btn {
+    color: #ffffff !important;
+    background-image: linear-gradient(to right, #AE8625, #F7BD69, #D2AC47, #EDC967);
 }
 
-/* Navigatie Font, Kleuren en Active*/
-
-.navbar {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
+.btn:hover {
+    color: #EDC967 !important;
+    background-image: linear-gradient(to right, black, black, black, black);
 }
 
+/*NAVBAR*/
+/*NAVBAR BTN*/
+#btn-nav-login, #btn-login-login, #btn-login-register, #btn-check, #btn-again{
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+/*NAVBAR LINKS*/
 .nav-link {
     color: #ffffff !important;
 }
@@ -20,22 +35,33 @@
     color: #EDC967 !important;
 }
 
-/* Nav Login Button */
-
-.navbar-btn {
-    font-weight: 700 !important;
-    font-size: 1rem !important;
-    color: #000000 !important;
-    background-image: linear-gradient(to right, #AE8625, #F7BD69, #D2AC47, #EDC967) !important;
-    padding: 0.5rem 2rem !important;
+/*NAVBAR LOGO*/
+.navbar-brand img {
+    height: 2.5rem;
 }
 
-.navbar-btn:hover {
-    color: #EDC967 !important;
-    background-image: linear-gradient(to right, #000000, #000000, #000000, #000000) !important;
+/*NAVBAR FONT*/
+.navbar {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
 }
 
+/*LOGIN SCREEN*/
+/*LOGIN LINK*/
+#link-login {
+    color: #AE8625;
+}
+
+#link-login:hover {
+    color: black;
+}
+
+/*MAIN*/
 /* Text over Foto's */
+.container-fluid{
+    height: 100%;
+}
 
 .image {
     position: relative;
@@ -70,59 +96,47 @@
     background: rgba(0, 0, 0, 0.6);
 }
 
-/* Slideshow op LoTRPagina */
-
-#carouselExampleSlidesOnly {
-    position: fixed;
-}
-
-/* Achtergrond Images voor LoTRPagina (nog niet in orde) */
-
-.img-responsive {
-    height: auto;
-    width: 100%;
-}
-
-@media only screen and (max-width: 600px) {
-    .img-responsive {
-        height: fit-content !important;
-        width: 100%;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-/* Button in midden van de website */
-#StartButtonContainer {
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-/* Button opmaak */
-
-#StartButtonCss {
+/*LOTR PAGE*/
+/*START BUTTON*/
+#startButtonCss {
     padding: 4vh 6vh;
+    margin-top: 50%;
     font-size: 8vh;
     font-weight: 700;
     border-radius: 20px;
 }
 
-#StartButtonCSS:hover {
-    background-color: #0000ff;
+#startButtonContainer {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: center;
 }
 
-/* Plaats de quote pop up in het midden van de pagina en Make up */
+/* Slideshow op LoTRPagina */
 
+#carouselExampleSlidesOnly {
+    position: fixed; /* laten staan anders komt voor button */
+}
+
+.img-responsive {
+    height:initial;
+}
+
+/* @media only screen and (max-width: 600px) {
+    .img-responsive {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+    }
+} */
+
+/* Plaats de quote pop up in het midden van de pagina en Make up */
 .modal {
     text-align: center;
 }
@@ -139,7 +153,7 @@
 }
 
 .modal-content {
-    background-color: lightgrey !important;
+    background-color: lightgrey;
     font-weight: 600;
 }
 
