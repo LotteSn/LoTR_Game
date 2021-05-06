@@ -16,6 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -43,142 +44,63 @@
         </div>
     </nav>
 
-    <!-- Background -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="10000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="img-responsive" src="../Website/img/Voorbeeld_background1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
+    <div id="backgroundImage">
                 <img class="img-responsive" src="../Website/img/Voorbeeld_background2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="img-responsive" src="../Website/img/Voorbeeld_background3.jpg" alt="Third slide">
+    </div>
+
+    <!-- Form pop up -->
+    <div class="container-fluid">
+        <div class="popup" id="popup-1">
+            <div class="content">
+                <div class="close" onclick="togglePopup()">X</div>
+                <h1 id="formTitel">Quote</h1>
+                <form>
+                    <div class="row">
+                        <div class="col-25"><label for="characterName">By: </label></div>
+                        <div class="col-75">
+                            <select id="characterName" name="characterName">
+                                <option value="gandalf">Gandalf</option>
+                                <option value="sam">Sam</option>
+                                <option value="frodo">Frodo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25"><label for="movieName">From: </label></div>
+                        <div class="col-75">
+                            <select id="movieName" name="movieName">
+                                <option value="movie1">The Fellowship of the Ring</option>
+                                <option value="movie2">The Two Towers</option>
+                                <option value="movie3">The Return of the King</option>
+                            </select>
+                        </div>
+                    </div>
+                </form><br>
+                <input id="btn-check" class="btn" type="button" value="Check">
             </div>
         </div>
     </div>
 
-    <!-- Start Button -->
+    <!-- Start Game Button -->
     <div class="container" id="startButtonContainer">
         <div class="row">
             <div class="col text-center">
-                <a href="#" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false">
-                    <button onClick="getQuote()" class="btn btn-start" id="startButtonCss">Start
-                        Game</button> <!-- onClick="this.style.visibility= 'hidden';" -->
-                </a>
+                <button onclick="togglePopup() = 'hidden';" class="btn btn-start" id="startButtonCss">Start
+                    Game</button>
             </div>
         </div>
     </div>
-</div>
-   
 
-    <!-- Form pop up -->
-    <div class="container" id="fromContainer">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="modal" id="myModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="container">
-                                    <h1 id="myQuote"></h1>
-                                    <form action="/action_page.php">
-                                        <div class="row">
-                                            <div class="col-25">
-                                                <label for="characterName">Character: </label>
-                                            </div>
-                                            <div class="col-75">
-                                                <select id="characterName" name="characterName">
-                                                    <option value="frodo">Frodo</option>
-                                                    <option value="sam">Sam</option>
-                                                    <option value="gandalf">Gandalf</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-25">
-                                                <label for="movieName">Movie: </label>
-                                            </div>
-                                            <div class="col-75">
-                                                <select id="movieName" name="movieName">
-                                                    <option value="movie1">The Fellowship of the Ring</option>
-                                                    <option value="movie2">The Two Towers</option>
-                                                    <option value="movie3">The Return of the King</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <br>
-                                    <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
-                                        data-target="#myModalCorrect"><input id="btn-check" class="btn"
-                                            data-dismiss="modal" type="button" value="Check"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal" id="myModalCorrect">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="container">
-                                    <h1>Good Job you guessed right!</h1>
-                                </div>
-                                <p>The answer is:</p>
-                                <p id="myQuote"></p>
-                                <p>Character Name, movie</p>
-                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
-                                    data-target="#myModal"><input id="btn-again" class="btn mr-auto"
-                                        data-dismiss="modal" type="button" value="Play Again"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal" id="myModalHint">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <h1 id="myQuote"></h1>
-                                <div class="container">
-                                    <h1>Nice Try here's a hint</h1>
-                                </div>
-                                <p>Insert 4 char pics</p>
-                                <select id="movieName" name="movieName">
-                                    <option value="movie1">The Fellowship of the Ring</option>
-                                    <option value="movie2">The Two Towers</option>
-                                    <option value="movie3">The Return of the King</option>
-                                </select>
-                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
-                                    data-target="#myModal"><input id="btn-again" class="btn mr-auto"
-                                        data-dismiss="modal" type="button" value="Check"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal" id="myModalInCorrect">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div class="container">
-                                    <h1>You didn't get the answer</h1>
-                                </div>
-                                <p>The answer is:</p>
-                                <p id="myQuote"></p>
-                                <p>Character Name, movie</p>
-                                <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false"
-                                    data-target="#myModal"><input id="btn-again" class="btn mr-auto"
-                                        data-dismiss="modal" type="button" value="Play Again"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script>
+        function togglePopup() {
+            document.getElementById("popup-1")
+                .classList.toggle("active");
+        }
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    <scrip src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></scrip>
+    <scrip src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></scrip>
     <script>
         var token = "ZY35L0ArKx5aX1l_Aoqo"
         var url = "https://the-one-api.dev"
