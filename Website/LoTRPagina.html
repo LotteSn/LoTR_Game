@@ -45,7 +45,7 @@
     </nav>
 
     <div id="backgroundImage">
-                <img class="img-responsive" src="../Website/img/Voorbeeld_background2.jpg" alt="Second slide">
+        <img class="img-responsive" src="../Website/img/Voorbeeld_background2.jpg" alt="Second slide">
     </div>
 
     <!-- Form pop up -->
@@ -90,50 +90,7 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function togglePopup() {
-            document.getElementById("popup-1")
-                .classList.toggle("active");
-        }
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
-    <script>
-        var token = "ZY35L0ArKx5aX1l_Aoqo"
-        var url = "https://the-one-api.dev"
-        $.ajax({
-            url: url,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer " + token)
-            },
-        })
-            .done(function (data) {
-                $.each(data, function (key, value) {
-                    // Do Something
-                })
-            })
-            .fail(function (jqXHR, textStatus) {
-                alert("Error: " + textStatus);
-            })
-
-        document.getElementById("startButtonContainer").onclick = function () { getQuote() };
-        var id = Math.floor(Math.random() * 101); //random getal 0-100 => hoeveel quotes? 
-
-        function getQuote() {
-            var sUrl = `https://the-one-api.dev/v2/quote/${id}`
-
-            $.get(sUrl)
-                .done(function (data) {
-                    document.getElementById("myQuote").innerHTML = data;
-                })
-                .fail(function (oError) {
-                    console.log(oError);
-                });
-        }
-    </script>
+    <script type="text/javascript" src="LoTRPagina.js"></script>
 </body>
 
 </html>
