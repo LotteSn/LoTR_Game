@@ -273,3 +273,18 @@ label {
     background-size: 100% 100%;
     overflow: hidden;
 }
+
+/* Modal Log-in - Register */
+.modal-body h1 {
+    color: #ffffff;
+}
+
+.modal a {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.modal a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}

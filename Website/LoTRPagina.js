@@ -45,15 +45,15 @@ callAPI().then(data => console.log(data));
 // var quote = document.getElementById("myQuote");
 
 // Notepad show / hide
-var a;
+var notepadStatus;
 function show_hide_notepad() {
-    if (a == 1) {
+    if (notepadStatus == 1) {
         document.getElementById("notepad").style.display = "inline";
-        return a = 0;
+        return notepadStatus = 0;
     }
     else {
         document.getElementById("notepad").style.display = "none";
-        return a = 1;
+        return notepadStatus = 1;
     }
 }
 
@@ -72,4 +72,9 @@ function loadTextarea() {
 function loadFunctions() {
     show_hide_notepad();
     loadTextarea();
+}
+
+//Geen toegang 
+function noAuthorization() {
+    alert("Geen toegang")
 }
