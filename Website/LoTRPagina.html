@@ -17,9 +17,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
 </head>
 
-<body>
+<body onload="loadFunctions()" onunload="saveNote()">
     <!-- Navigatie Menu -->
     <nav class="navbar bg-dark navbar-dark navbar-expand-lg">
         <div class="container-fluid">
@@ -77,6 +78,14 @@
                     </div>
                 </form><br>
                 <input id="btn-check" class="btn" type="button" value="Check">
+                <a href="https://lotr.fandom.com/wiki/Main_Page" target="_blank"><input id="btn-check" class="btn"
+                        type="button" value="Help"></a>
+                <input onclick="show_hide_notepad()" id="btn-check" class="btn" type="button" value="Notepad">
+                <p></p>
+                <form id="notepad">
+                    <textarea rows=5 id="noteText"></textarea><br>
+                    <input class="btn" type="reset" value="clear">
+                </form>
             </div>
         </div>
     </div>
@@ -85,8 +94,7 @@
     <div class="container" id="startButtonContainer">
         <div class="row">
             <div class="col text-center">
-                <button onclick="togglePopup() = 'hidden';" class="btn btn-start" id="startButtonCss">Start
-                    Game</button>
+                <button onclick="togglePopup()" class="btn btn-start" id="startButtonCss">Start Game</button>
             </div>
         </div>
     </div>
