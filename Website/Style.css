@@ -179,8 +179,13 @@ body {
     box-shadow: 5px 5px 15px #1e1e1e, -5px -5px 15px #1e1e1e;
 }
 
-.popup .close:hover {
+.popup a {
     color: #ffffff;
+}
+
+.popup a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .popup.active .content {
