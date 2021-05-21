@@ -57,24 +57,24 @@ function show_hide_notepad() {
     }
 }
 
-//Notepad Opslagen
+//Notepad Textarea opslagen.
 function saveNote() {
     var textElement = document.getElementById("noteText").value;
     localStorage.setItem("note", (textElement));
-    console.log(localStorage.getItem("note"));
 }
 
+//Notepad Text laden in de TextArea (notepad)
 function loadTextarea() {
     document.getElementById("noteText").value = localStorage.getItem("note");
 }
 
-//Load Functions voor notepads
+//Notepads Load Functions
 function loadFunctions() {
     show_hide_notepad();
     loadTextarea();
 }
 
-//Geen toegang 
+//Geen toegang voor de error pagina
 function noAuthorization() {
     alert("Geen toegang")
 }

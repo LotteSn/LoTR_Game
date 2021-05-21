@@ -55,6 +55,12 @@ body {
     letter-spacing: 0.1rem;
 }
 
+/* NAVBAR USERNAME */
+#usernameNavbar {
+    color: #EDC967;
+    font-weight: 600;
+}
+
 /*LOGIN SCREEN*/
 
 /*LOGIN LINK*/
