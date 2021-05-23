@@ -272,18 +272,6 @@ label {
     padding: 0.5rem 5rem !important;
 }
 
-/* Error pagina CSS */
-
-#ErrorMessage {
-    margin: 20%;
-    color: #EDC967;
-}
-
-#YouFoolBackground {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    overflow: hidden;
-}
 
 /* Modal Log-in - Register */
 .modal-body h1 {
@@ -298,6 +286,25 @@ label {
 .modal a:hover {
     color: #ffffff;
     text-decoration: none;
+}
+
+
+/* Model opties */
+.btn-position{
+    text-align: center;
+}
+
+.btn-modal {
+    padding: 2rem 3rem 2rem 3rem !important;
+}
+
+.modal-body {
+    border-radius: 10px !important;
+}
+
+.modal-content {
+    border-radius: 20px !important;
+    top: 5rem;
 }
 
 /* Win Streak */

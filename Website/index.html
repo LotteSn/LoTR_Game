@@ -54,8 +54,8 @@
             <div class="row">
                 <div class="col-lg-6 mb-2 px-1">
                     <div class="image">
-                        <a href="LoTRPagina.html"><img class="image__img" src="img/Ring.png"
-                                alt="Picture of the ring from Lord of The Rings">
+                        <a href="LoTRPagina.html" data-toggle="modal" data-target="#subpageModal"><img
+                                class="image__img" src="img/Ring.png" alt="Picture of the ring from Lord of The Rings">
                             <div class="image__overlay">
                                 <div class="image__title">The One</div>
                             </div>
@@ -128,7 +128,7 @@
                                             </div>
                                         </div>
                                     </form><br>
-                                    <button id="btn-login-login" type="submit" class="btn">Log in</button></a><br><br>
+                                    <button id="btn-login-login" type="submit" class="btn">Log in</button><br><br>
                                     <a href="#" id="link-login" data-toggle="modal" data-target="#myModalRegister"
                                         data-dismiss="modal">Don't have an account yet?</a>
                                 </div>
@@ -170,7 +170,7 @@
                                         </div>
                                     </form><br>
                                     <button id="btn-login-register" type="submit" class="btn">Create
-                                        Account</button></a><br><br>
+                                        Account</button><br><br>
                                     <a href="#" id="link-login" data-toggle="modal" data-target="#myModal"
                                         data-dismiss="modal">Already have an account.</a>
                                 </div>
@@ -180,7 +180,28 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="LoTRPagina.js"></script>
+    </div>
+
+    <!-- Modal Pop up Login -->
+    <div class="container btn-background" id="fromContainer">
+        <div class="row">
+            <div class="modal" id="subpageModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body bg-dark">
+                            <div class="close"><a href="#" data-dismiss="modal">X</a></div>
+                            <div class="container btn-position">
+                                <a href="LoTRPagina.html"><button class="btn navbar-btn btn-modal">&nbsp;&nbsp;The
+                                        One&nbsp;&nbsp;</button></a>
+                                <button class="btn navbar-btn btn-modal" onclick="noAuthorization()">LoTR games</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="LoTRPagina.js"></script>
 </body>
 
 </html>
