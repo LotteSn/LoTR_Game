@@ -299,3 +299,20 @@ label {
     color: #ffffff;
     text-decoration: none;
 }
+
+/* Win Streak */
+.container-winstreak {
+    position: absolute;
+    padding: 10px 20px;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 0px 5px 0px 0px;
+}
+
+.bottomleft {
+    bottom: 8px;
+    left: 16px;
+    font-size: 1.5em;
+    color: #EDC967;
+}

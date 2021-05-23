@@ -55,6 +55,14 @@
         <img class="img-responsive" src="../Website/img/Voorbeeld_background2.jpg" alt="Second slide">
     </div>
 
+    <!-- Winstreak -->
+    <div class="container-winstreak">
+        <div class="bottomleft">
+            <h4 id="winstreak">Winstreak: 0</h4>
+            <h4 id="highest-winstreak">Highest Winstreak: 0</h4>
+        </div>
+    </div>
+
     <!-- Form pop up -->
     <div class="container-fluid">
         <div class="popup" id="popup-1">
@@ -83,13 +91,13 @@
                         </div>
                     </div>
                 </form><br>
-                <input id="btn-check" class="btn" type="button" value="Check">
+                <input onclick="winstreakCorrect()" id="btn-check" class="btn" type="button" value="Check">
                 <a href="https://lotr.fandom.com/wiki/Main_Page" target="_blank"><input id="btn-check" class="btn"
                         type="button" value="Help"></a>
                 <input onclick="show_hide_notepad()" id="btn-check" class="btn" type="button" value="Notepad">
                 <p></p>
                 <form id="notepad">
-                    <textarea rows=5 id="noteText"></textarea><br>
+                    <textarea rows=10 id="noteText"></textarea><br>
                     <input class="btn" type="reset" value="clear">
                 </form>
             </div>
@@ -105,6 +113,14 @@
         </div>
     </div>
     <script type="text/javascript" src="LoTRPagina.js"></script>
+
+    <script>
+        //Winstreak score
+        var winstreakScore = 0;
+        var highestWinstreakScore = 0;
+
+        
+    </script>
 </body>
 
 </html>

@@ -72,9 +72,26 @@ function loadTextarea() {
 function loadFunctions() {
     show_hide_notepad();
     loadTextarea();
+    highestWinstreakScore = localStorage.getItem("highestWinstreakScoreMemory");
+    document.getElementById("highest-winstreak").innerHTML = ("Highest Winstreak: " + highestWinstreakScore);
 }
 
 //Geen toegang voor de error pagina
 function noAuthorization() {
     alert("Geen toegang")
+}
+
+function winstreakCorrect() {
+    winstreakScore++;
+    document.getElementById("winstreak").innerHTML = ("Winstreak: " + winstreakScore);
+
+    if (highestWinstreakScore < winstreakScore) {
+        highestWinstreakScore = winstreakScore;
+        localStorage.setItem("highestWinstreakScoreMemory", (highestWinstreakScore));
+        document.getElementById("highest-winstreak").innerHTML = ("Highest Winstreak: " + highestWinstreakScore);
+    }
+}
+function winstreakWrong() {
+    winstreakScore = 0;
+    document.getElementById("winstreak").innerHTML = ("Winstreak: " + winstreakScore);
 }
