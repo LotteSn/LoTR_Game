@@ -68,7 +68,7 @@
         <div class="popup" id="popup-1">
             <div class="content">
                 <div class="close" onclick="togglePopup()"><a href="#">X</a></div>
-                <h1 id="formTitel">Quote</h1>
+                <h1 id="myQuote">Quote</h1>
                 <form>
                     <div class="row">
                         <div class="col-25"><label for="characterName">By: </label></div>
@@ -108,7 +108,7 @@
     <div class="container" id="startButtonContainer">
         <div class="row">
             <div class="col text-center">
-                <button onclick="togglePopup()" class="btn btn-start" id="startButtonCss">Start Game</button>
+                <button onclick="togglePopup();fillData();" class="btn btn-start" id="startButtonCss">Start Game</button>
             </div>
         </div>
     </div>
@@ -119,7 +119,6 @@
         var winstreakScore = 0;
         var highestWinstreakScore = 0;
 
-        
     </script>
 </body>
 
