@@ -11,7 +11,8 @@ function getRandomInt(max) {
 }
 
 var token = "L-r_2iO5N7DkmeeHq1V6";
-var uriQuotes = 'https://the-one-api.dev/v2/quote';
+var uri = "https://the-one-api.dev/v2";
+
 
 // togglePopup
 function togglePopup() {
@@ -20,41 +21,61 @@ function togglePopup() {
 }
 
 // call API
-// async function callAPI() {
-//     let response = await fetch(uriQuotes, {
-//         headers: {
-//             'Accept': 'application/json',
-//             'Authorization': `Bearer ${token}`
-//         }
-//     })
-//     let data = await response.json();
-//     return data;
-// }
-// callAPI();
-// .then(data => console.log(data));
-
-// get quote
-async function fillData() {
-    // GET ALL QUOTES
-    let allQuotesResponse = await fetch(uriQuotes, {
+async function callAPI(path) {
+    let response = await fetch(`${uri}/${path}`, {
         headers: {
             'Accept': 'application/json',
             'Authorization': `Bearer ${token}`
         }
     })
-    let allQuotes = await allQuotesResponse.json();
-    var randomInt = getRandomInt(allQuotes.docs.length);
-    var randomQuote = allQuotes.docs[randomInt].dialog;
-    console.log(randomQuote);
-
-    // var characterBox = document.getElementById("characterName");
-    // var movieBox = document.getElementById("movieName");
-
-    // Y U NO WORK
-    // document.getElementById("myQuote").innerHTML = randomQuote;
+    let data = await response.json();
+    return data;
 }
+// callAPI("movie").then(data => console.log(data));
 
-fillData();
+// get quote
+function getQuote() {
+    var allQuotes = callAPI("quote").then(data => {
+        // allQuotes.docs.length
+        var randomInt = getRandomInt(67);
+        var randomQuote = data.docs[randomInt].dialog;
+        document.getElementById("myQuote").innerHTML = randomQuote;
+        console.log(randomQuote);
+    });
+}
+getQuote();
+
+async function getCharacters() {
+    var characterBox = document.getElementById("characterName");
+    var allCharactersResponse = callAPI("character").then(data => { });
+    let allCharacters = await allCharactersResponse.json();
+    console.log(allCharacters);
+
+    for (var i in allCharacters) {
+        var option = document.createElement("option");
+        option.value = allCharacters[i].name;
+        option.text = allCharacters[i].name;
+
+        characterBox.appendChild(option);
+    }
+}
+getCharacters();
+
+async function getMovies() {
+    var movieBox = document.getElementById("movieName");
+    var allMoviesResponse = callAPI("movie").then(data => { });
+    let allMovies = await allMoviesResponse.json();
+    console.log(allMovies);
+
+    for (var i in allMovies) {
+        var option = document.createElement("option");
+        option.value = allMovies[i].name;
+        option.text = allMovies[i].name;
+
+        movieBox.appendChild(option);
+    }
+}
+getMovies();
 
 // Notepad show / hide
 var notepadStatus;

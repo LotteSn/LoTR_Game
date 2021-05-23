@@ -94,7 +94,7 @@
                 <input onclick="winstreakCorrect()" id="btn-check" class="btn" type="button" value="Check">
                 <a href="https://lotr.fandom.com/wiki/Main_Page" target="_blank"><input id="btn-check" class="btn"
                         type="button" value="Help"></a>
-                <input onclick="show_hide_notepad()" id="btn-check" class="btn" type="button" value="Notepad">
+                <input onclick="show_hide_notepad();test();" id="btn-check" class="btn" type="button" value="Notepad">
                 <p></p>
                 <form id="notepad">
                     <textarea rows=10 id="noteText"></textarea><br>
@@ -108,7 +108,7 @@
     <div class="container" id="startButtonContainer">
         <div class="row">
             <div class="col text-center">
-                <button onclick="togglePopup();fillData();" class="btn btn-start" id="startButtonCss">Start Game</button>
+                <button onclick="togglePopup();getQuote();" class="btn btn-start" id="startButtonCss">Start Game</button>
             </div>
         </div>
     </div>
