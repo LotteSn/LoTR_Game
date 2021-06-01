@@ -35,47 +35,53 @@ async function callAPI(path) {
 
 // get quote
 function getQuote() {
-    var allQuotes = callAPI("quote").then(data => {
-        // allQuotes.docs.length
-        var randomInt = getRandomInt(67);
-        var randomQuote = data.docs[randomInt].dialog;
-        document.getElementById("myQuote").innerHTML = randomQuote;
-        console.log(randomQuote);
-    });
+    var randomInt = getRandomInt(67);
+    callAPI("quote").then(data => {      
+        var randomQuote = data.docs[randomInt].dialog;     
+        console.log(randomQuote);   
+    })
+    // DONT WORK
+    // return document.getElementById("myQuote").innerHTML = randomQuote;
 }
-getQuote();
 
-async function getCharacters() {
-    var characterBox = document.getElementById("characterName");
-    var allCharactersResponse = callAPI("character").then(data => { });
-    let allCharacters = await allCharactersResponse.json();
-    console.log(allCharacters);
+var allCharacters = [];
+function getCharacters() {
+    callAPI("character").then(data => {
+        for (i = 0; i < data.docs.length; i++) {
+            allCharacters[i] = (data.docs[i].name);
+        } 
+        console.log(allCharacters.length);   
+    });
+    // var characterBox = document.getElementById("characterName");
+    // var allCharactersResponse = callAPI("character").then(data => { });
+    // let allCharacters = await allCharactersResponse.json();
+    // console.log(allCharacters);
 
-    for (var i in allCharacters) {
-        var option = document.createElement("option");
-        option.value = allCharacters[i].name;
-        option.text = allCharacters[i].name;
+    // for (var i in allCharacters) {
+    //     var option = document.createElement("option");
+    //     option.value = allCharacters[i].name;
+    //     option.text = allCharacters[i].name;
 
-        characterBox.appendChild(option);
-    }
+    //     characterBox.appendChild(option);
+    // }
 }
 getCharacters();
 
-async function getMovies() {
-    var movieBox = document.getElementById("movieName");
-    var allMoviesResponse = callAPI("movie").then(data => { });
-    let allMovies = await allMoviesResponse.json();
-    console.log(allMovies);
+// async function getMovies() {
+//     var movieBox = document.getElementById("movieName");
+//     var allMoviesResponse = callAPI("movie").then(data => { });
+//     let allMovies = await allMoviesResponse.json();
+//     console.log(allMovies);
 
-    for (var i in allMovies) {
-        var option = document.createElement("option");
-        option.value = allMovies[i].name;
-        option.text = allMovies[i].name;
+//     for (var i in allMovies) {
+//         var option = document.createElement("option");
+//         option.value = allMovies[i].name;
+//         option.text = allMovies[i].name;
 
-        movieBox.appendChild(option);
-    }
-}
-getMovies();
+//         movieBox.appendChild(option);
+//     }
+// }
+// getMovies();
 
 // Notepad show / hide
 var notepadStatus;

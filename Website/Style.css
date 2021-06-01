@@ -1,7 +1,9 @@
 body {
     height: fit-content !important;
 }
-
+#myQuote {
+    color: white;
+}
 /* #fromContainer {
     background-color: gray;
     opacity: 0.5;
@@ -306,7 +308,7 @@ label {
     padding: 10px 20px;
     bottom: 0px;
     left: 0px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 0px 5px 0px 0px;
 }
 
