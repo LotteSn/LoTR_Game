@@ -38,34 +38,33 @@ function getQuote() {
     var randomInt = getRandomInt(67);
     callAPI("quote").then(data => {      
         var randomQuote = data.docs[randomInt].dialog;     
-        console.log(randomQuote);   
-    })
-    // DONT WORK
-    // return document.getElementById("myQuote").innerHTML = randomQuote;
+        console.log(randomQuote);  
+        // document.getElementById("myQuote").innerHTML = randomQuote; 
+        document.getElementById("myQuote").innerHTML = "test";
+    });
 }
 
 var allCharacters = [];
 function getCharacters() {
+    var characterBox = document.getElementById("characterName");
     callAPI("character").then(data => {
         for (i = 0; i < data.docs.length; i++) {
             allCharacters[i] = (data.docs[i].name);
         } 
         console.log(allCharacters.length);   
     });
-    // var characterBox = document.getElementById("characterName");
     // var allCharactersResponse = callAPI("character").then(data => { });
     // let allCharacters = await allCharactersResponse.json();
     // console.log(allCharacters);
 
-    // for (var i in allCharacters) {
-    //     var option = document.createElement("option");
-    //     option.value = allCharacters[i].name;
-    //     option.text = allCharacters[i].name;
+    for (var i in allCharacters) {
+        var option = document.createElement("option");
+        option.value = allCharacters[i].name;
+        option.text = allCharacters[i].name;
 
-    //     characterBox.appendChild(option);
-    // }
+        characterBox.appendChild(option);
+    }
 }
-getCharacters();
 
 // async function getMovies() {
 //     var movieBox = document.getElementById("movieName");

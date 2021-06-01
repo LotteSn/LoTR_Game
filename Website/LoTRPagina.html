@@ -73,7 +73,8 @@
                     <div class="row">
                         <div class="col-25"><label for="characterName">By: </label></div>
                         <div class="col-75">
-                            <select id="characterName" name="characterName">
+                            <!-- name="characterName" -->
+                            <select id="characterName"> 
                                 <option value="gandalf">Gandalf</option>
                                 <option value="sam">Sam</option>
                                 <option value="frodo">Frodo</option>
@@ -83,7 +84,8 @@
                     <div class="row">
                         <div class="col-25"><label for="movieName">From: </label></div>
                         <div class="col-75">
-                            <select id="movieName" name="movieName">
+                            <!-- name="movieName" -->
+                            <select id="movieName">
                                 <option value="movie1">The Fellowship of the Ring</option>
                                 <option value="movie2">The Two Towers</option>
                                 <option value="movie3">The Return of the King</option>
@@ -108,7 +110,7 @@
     <div class="container" id="startButtonContainer">
         <div class="row">
             <div class="col text-center">
-                <button onclick="togglePopup();getQuote();" class="btn btn-start" id="startButtonCss">Start Game</button>
+                <button onclick="togglePopup();getQuote();getCharacters();" class="btn btn-start" id="startButtonCss">Start Game</button>
             </div>
         </div>
     </div>
