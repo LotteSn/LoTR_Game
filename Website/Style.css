@@ -56,6 +56,7 @@ body {
 }
 
 /* NAVBAR USERNAME */
+
 #usernameNavbar {
     color: #EDC967;
     font-weight: 600;
@@ -114,6 +115,11 @@ body {
     background: rgba(0, 0, 0, 0.6);
 }
 
+.image__title {
+    color: #EDC967;
+    font-size: 5rem;
+}
+
 /*LOTR PAGE*/
 
 /*START BUTTON*/
@@ -140,7 +146,6 @@ body {
     position: fixed;
     /* laten staan anders komt voor button */
 }
-
 
 /* @media only screen and (max-width: 600px) {
     .img-responsive {
@@ -256,7 +261,7 @@ label {
     }
 }
 
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 600px wide */
 
 @media screen and (max-width: 600px) {
     .col-25, .col-75, input[type=submit] {
@@ -264,6 +269,57 @@ label {
     }
     .popup .content {
         width: 80%;
+    }
+    .image__title {
+        font-size: 3rem;
+    }
+    .container-winstreak {
+        width: 100%;
+        border-radius: 0px 0px 0px 0px !important;
+    }
+    #winstreak {
+        font-size: 1.2rem !important;
+    }
+    #highest-winstreak {
+        font-size: 1.2rem !important;
+    }
+    #startButtonCss {
+        font-size: 6vh;
+    }
+    .popup .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -150%) scale(0);
+        width: 80%;
+        height: 24rem;
+        z-index: 2;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        background: #292b2c;
+        z-index: 1;
+    }
+    .popup .close {
+        font-size: 13px;
+        width: 20px;
+        height: 20px;
+    }
+    #btn-check {
+        width: 12rem;
+        margin-bottom: 8px;
+    }
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        font-size: 0.8rem;
+    }
+    label {
+        font-size: 0.8rem;
+        color: white;
     }
 }
 
@@ -286,6 +342,7 @@ label {
 }
 
 /* Modal Log-in - Register */
+
 .modal-body h1 {
     color: #ffffff;
 }
@@ -301,6 +358,7 @@ label {
 }
 
 /* Win Streak */
+
 .container-winstreak {
     position: absolute;
     padding: 10px 20px;
@@ -313,6 +371,5 @@ label {
 .bottomleft {
     bottom: 8px;
     left: 16px;
-    font-size: 1.5em;
     color: #EDC967;
 }
