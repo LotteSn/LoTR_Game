@@ -35,6 +35,7 @@ body {
 
 .nav-link {
     color: #ffffff !important;
+    text-shadow: 1px 1px #000000;
 }
 
 .nav-link.active, .nav-link:hover {
@@ -118,6 +119,7 @@ body {
 .image__title {
     color: #EDC967;
     font-size: 5rem;
+    text-shadow: 2px 2px #ff0000;
 }
 
 /*LOTR PAGE*/
