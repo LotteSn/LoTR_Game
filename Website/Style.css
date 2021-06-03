@@ -144,7 +144,7 @@ body {
     position: center;
 }
 
-/* Slideshow op LoTRPagina */
+/* LoTRPagina */
 
 #backgroundImage {
     position: fixed;
@@ -221,14 +221,6 @@ body {
     width: 12rem;
 }
 
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-}
-
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
@@ -245,7 +237,6 @@ label {
 
 .col-75 {
     float: left;
-    width: 75%;
     margin-top: 6px;
 }
 
@@ -380,5 +371,15 @@ label {
 /* Dropdown Boxes */
 .select2-container .select2-selection{
     height: 34px !important;
-    width: 100% !important;
+    width: 400px !important;
+}
+
+.select2-dropdown{
+    height: 34px !important;
+    width: 400px !important;
+}
+
+#select2-characterName-container {
+    height: 34px !important;
+    width: 400px !important;
 }
