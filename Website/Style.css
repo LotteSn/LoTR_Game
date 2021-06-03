@@ -238,12 +238,11 @@ label {
 
 .col-75 {
     float: left;
-    width: 70%;
+    width: 75%;
     margin-top: 6px;
 }
 
 /* Clear floats after the columns */
-
 .row:after {
     content: "";
     display: table;
@@ -317,4 +316,10 @@ label {
     left: 16px;
     font-size: 1.5em;
     color: #EDC967;
+}
+
+/* Dropdown Boxes */
+.select2-container .select2-selection{
+    height: 34px !important;
+    width: 100% !important;
 }

@@ -133,3 +133,4 @@ function winstreakWrong() {
     winstreakScore = 0;
     document.getElementById("winstreak").innerHTML = ("Winstreak: " + winstreakScore);
 }
+

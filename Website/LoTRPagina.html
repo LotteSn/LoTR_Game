@@ -12,6 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -21,6 +24,9 @@
 </head>
 
 <body onload="loadFunctions()" onunload="saveNote()">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
     <!-- Navigatie Menu -->
     <nav class="navbar bg-dark navbar-dark navbar-expand-lg navbar-custom">
         <div class="container-fluid">
@@ -71,25 +77,33 @@
                 <h1 id="myQuote">Quote</h1>
                 <form>
                     <div class="row">
-                        <div class="col-25"><label for="characterName">By: </label></div>
+                        <div class="col-25">
+                            <label for="characterName">By: </label>
+                        </div>
                         <div class="col-75">
-                            <!-- name="characterName" -->
-                            <select id="characterName"> 
-                                <option value="gandalf">Gandalf</option>
-                                <option value="sam">Sam</option>
-                                <option value="frodo">Frodo</option>
-                            </select>
+                            <div class="row">
+                                <form>
+                                    <select id="characterName" class="form-control select2">
+                                       <option>Frodo</option> 
+                                       <option>Sam</option> 
+                                       <option>Gandalf</option> 
+                                    </select>
+                                </form>
+                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-25"><label for="movieName">From: </label></div>
+                        <div class="col-25">
+                            <label for="movieName">From: </label>
+                        </div>
                         <div class="col-75">
-                            <!-- name="movieName" -->
-                            <select id="movieName">
-                                <option value="movie1">The Fellowship of the Ring</option>
-                                <option value="movie2">The Two Towers</option>
-                                <option value="movie3">The Return of the King</option>
-                            </select>
+                            <div class="row">
+                                <form>
+                                    <select id="movieName" class="form-control select2">
+                                       <option>The two towers</option> 
+                                    </select>
+                                </form>
+                             </div>
                         </div>
                     </div>
                 </form><br>
@@ -121,6 +135,7 @@
         var winstreakScore = 0;
         var highestWinstreakScore = 0;
 
+        $('.select2').select2();
     </script>
 </body>
 
