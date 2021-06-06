@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Titel en Favicon -->
+    <title>Home</title>
+    <link rel="icon" href="img/RingIcon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="LoTRPagina.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigatie Menu -->
+    <nav class="navbar bg-dark navbar-dark navbar-expand-lg mb-1">
+        <div class="container-fluid">
+            <!-- Nav Logo -->
+            <a href="index.html" class="navbar-brand"><img src="img/Home Icon_Active.png" alt="Website logo"></a>
+
+            <!-- Nav Hamburger-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigatie -->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item pr-2"><a href="home.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item px-2"><a href="LoTRPagina.html" class="nav-link">The One</a></li>
+                    <li class="nav-item px-2"><a href="" onclick="noAuthorization()" class="nav-link">Fifa</a></li>
+                    <li class="nav-item px-2"><a href="" onclick="noAuthorization()" class="nav-link">Fortnite</a></li>
+                    <li class="nav-item px-2"><a href="" onclick="noAuthorization()" class="nav-link">Lego</a></li>
+                </ul>
+                <!-- Nav Login knop-->
+                <form class="navbar-nav ml-auto">
+                    <a href="#" data-toggle="modal" data-target="#myModal">
+                        <button id="btn-nav-login" type="submit" class="btn navbar-btn">Log in</button></a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 4 klikbare foto's -->
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 mb-2 px-1">
+                    <div class="image">
+                        <a href="LoTRPagina.html"><img class="image__img" src="img/Ring.png"
+                                alt="Picture of the ring from Lord of The Rings">
+                            <div class="image__overlay">
+                                <div class="image__title">The One</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2 px-1">
+                    <div class="image">
+                        <a href="" onclick="noAuthorization()"><img class="image__img" src="img/Fifa.jpg"
+                                alt="Picture of the Fifa Game">
+                            <div class="image__overlay">
+                                <div class="image__title">Fifa</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 mb-2 px-1">
+                    <div class="image">
+                        <a href="" onclick="noAuthorization()"><img class="image__img" src="img/Fortnite.jpg"
+                                alt="Picture of the Fortnite Game">
+                            <div class="image__overlay">
+                                <div class="image__title">Fortnite</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2 px-1">
+                    <div class="image">
+                        <a href="" onclick="noAuthorization()"><img class="image__img" src="img/Lego.jpg"
+                                alt="Picture of Legos">
+                            <div class="image__overlay">
+                                <div class="image__title">Lego</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Modal Pop up Login -->
+    <div class="container" id="fromContainer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body bg-dark">
+                                <div class="close"><a href="#" data-dismiss="modal">X</a></div>
+                                <div class="container">
+                                    <h1>Login</h1>
+                                    <form action="/action_page.php">
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="characterName">E-mail: </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="movieName">Password: </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="password" name="password">
+                                            </div>
+                                        </div>
+                                    </form><br>
+                                    <button id="btn-login-login" type="submit" class="btn">Log in</button></a><br><br>
+                                    <a href="#" id="link-login" data-toggle="modal" data-target="#myModalRegister"
+                                        data-dismiss="modal">Don't have an account yet?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="myModalRegister">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body bg-dark">
+                                <div class="close" onclick="togglePopup()"><a href="#" data-dismiss="modal">X</a></div>
+                                <div class="container">
+                                    <h1>Register</h1>
+                                    <form action="/action_page.php">
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="userName" id="form-login">Username: </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="username" name="username">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="email">E-mail: </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-25">
+                                                <label for="password">Password: </label>
+                                            </div>
+                                            <div class="col-75">
+                                                <input type="text" id="password" name="password">
+                                            </div>
+                                        </div>
+                                    </form><br>
+                                    <button id="btn-login-register" type="submit" class="btn">Create
+                                        Account</button></a><br><br>
+                                    <a href="#" id="link-login" data-toggle="modal" data-target="#myModal"
+                                        data-dismiss="modal">Already have an account.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
