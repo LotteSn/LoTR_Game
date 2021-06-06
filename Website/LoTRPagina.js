@@ -1,10 +1,3 @@
-src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";
-src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js";
-src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js";
-src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
-src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js";
-src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js";
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -18,21 +11,8 @@ function togglePopup() {
         .classList.toggle("active");
 }
 
-// call API
-/* async function callAPI(path) {
-    let response = await fetch(`${uri}/${path}`, {
-        headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${token}`
-        }
-    })
-    let data = await response.json();
-    return data;
-} */
-
 //call API 
 async function callAPI(path) {
-    console.log("running callAPI with path= ", path)
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", uri + "/" + path, false); // false for synchronous request
     xmlHttp.setRequestHeader("Authorization", "Bearer " + token)
@@ -84,7 +64,7 @@ function getMovies() {
     var allMoviesResponse = callAPI("movie").then(data => {
         allMovies = data.docs
 
-        for (var i in allCharacters) {
+        for (var i in allMovies) {
             var option = document.createElement("option");
             option.value = allMovies[i]._id;
             option.text = allMovies[i].name;
@@ -149,11 +129,12 @@ function loadFunctions() {
     document.getElementById("highest-winstreak").innerHTML = ("Highest Winstreak: " + highestWinstreakScore);
 }
 
-//Geen toegang voor de error pagina
+//Geen toegang tot de andere paginas
 function noAuthorization() {
     alert("Geen toegang")
 }
 
+//Winstreak Functions
 function winstreakCorrect() {
     winstreakScore++;
     document.getElementById("winstreak").innerHTML = ("Winstreak: " + winstreakScore);

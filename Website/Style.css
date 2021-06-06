@@ -1,16 +1,6 @@
 body {
     height: fit-content !important;
 }
-
-#myQuote {
-    color: white;
-}
-
-/* #fromContainer {
-    background-color: gray;
-    opacity: 0.5;
-} */
-
 /*ALL*/
 
 /*ALL BUTTONS*/
@@ -122,9 +112,24 @@ body {
 }
 
 .image__title {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 5rem;
     text-shadow: 2px 2px #000000;
+}
+
+/* Modal Log-in - Register */
+.modal-body h1 {
+    color: #ffffff;
+}
+
+.modal a {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.modal a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /*LOTR PAGE*/
@@ -154,20 +159,7 @@ body {
     /* laten staan anders komt voor button */
 }
 
-/* @media only screen and (max-width: 600px) {
-    .img-responsive {
-        height: 100%;
-        width: 100%;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-size: cover;
-    }
-} */
-
 /* Plaats de quote pop up in het midden van de pagina en Make up */
-
 .popup .content {
     position: absolute;
     top: 50%;
@@ -211,32 +203,34 @@ body {
     transform: translate(-50%, -50%) scale(1);
 }
 
-#formTitel {
-    position: absolute;
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    color: #ffffff !important;
-}
-
-#footer {
-    bottom: 0 !important;
-}
-
-#btn-check {
-    width: 12rem;
-}
-
+/* Pop-up - Labels, Buttons, myQuote, Comboboxes */
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
     color: white;
 }
 
-/* Form - Left side (col-25) label | Right side (col-75) input type */
+#btn-check {
+    width: 12rem;
+}
 
+/* MyQuote */
+#myQuote {
+    font-size: 1.5rem !important;
+    color: #ffffff;
+}
+
+#userOutput {
+    color: #ffffff;
+}
+
+/* ComboBoxes */
+.form-control {
+    height: 34px !important;
+    width: 400px !important;
+}
+
+/* Pop-up - Left side (col-25) label | Right side (col-75) input type */
 .col-25 {
     float: left;
     width: 25%;
@@ -261,37 +255,7 @@ label {
     padding: 0.5rem 5rem !important;
 }
 
-/* Error pagina CSS */
-
-#ErrorMessage {
-    margin: 20%;
-    color: #EDC967;
-}
-
-#YouFoolBackground {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    overflow: hidden;
-}
-
-/* Modal Log-in - Register */
-
-.modal-body h1 {
-    color: #ffffff;
-}
-
-.modal a {
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.modal a:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
-
 /* Win Streak */
-
 .container-winstreak {
     position: fixed;
     padding: 10px 20px;
@@ -305,23 +269,6 @@ label {
     bottom: 8px;
     left: 16px;
     color: #EDC967;
-}
-
-/* MyQuote */
-
-#myQuote {
-    font-size: 1.5rem !important;
-}
-
-#userOutput {
-    color: #ffffff;
-}
-
-/* Dropdown Boxes */
-
-.form-control {
-    height: 34px !important;
-    width: 400px !important;
 }
 
 /* Responsive layout - when the screen is more than 1000px wide, make the two columns stack on top of each other instead of next to each other */
