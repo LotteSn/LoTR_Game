@@ -1,9 +1,11 @@
 body {
     height: fit-content !important;
 }
+
 #myQuote {
     color: white;
 }
+
 /* #fromContainer {
     background-color: gray;
     opacity: 0.5;
@@ -56,6 +58,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
+    position: fixed;
 }
 
 /* NAVBAR USERNAME */
@@ -171,7 +174,7 @@ body {
     left: 50%;
     transform: translate(-50%, -150%) scale(0);
     width: 60%;
-    height: 22rem;
+    height: 28rem;
     z-index: 2;
     text-align: center;
     padding: 20px;
@@ -209,12 +212,17 @@ body {
 }
 
 #formTitel {
+    position: absolute;
     text-align: center;
     font-size: 32px;
     font-weight: 600;
     padding-top: 20px;
     padding-bottom: 10px;
     color: #ffffff !important;
+}
+
+#footer {
+    bottom: 0 !important;
 }
 
 #btn-check {
@@ -237,84 +245,15 @@ label {
 
 .col-75 {
     float: left;
-    margin-top: 6px;
+    margin-top: 20px;
 }
 
 /* Clear floats after the columns */
+
 .row:after {
     content: "";
     display: table;
     clear: both;
-}
-
-/* Responsive layout - when the screen is more than 1000px wide, make the two columns stack on top of each other instead of next to each other */
-
-@media screen and (min-width: 1000px) {
-    .popup .content {
-        width: 50%;
-    }
-}
-
-/* Responsive layout - when the screen is less than 600px wide */
-
-@media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-        margin-top: 0;
-    }
-    .popup .content {
-        width: 80%;
-    }
-    .image__title {
-        font-size: 3rem;
-    }
-    .container-winstreak {
-        width: 100%;
-        border-radius: 0px 0px 0px 0px !important;
-    }
-    #winstreak {
-        font-size: 1.2rem !important;
-    }
-    #highest-winstreak {
-        font-size: 1.2rem !important;
-    }
-    #startButtonCss {
-        font-size: 6vh;
-    }
-    .popup .content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -150%) scale(0);
-        width: 80%;
-        height: 24rem;
-        z-index: 2;
-        text-align: center;
-        padding: 15px;
-        border-radius: 10px;
-        background: #292b2c;
-        z-index: 1;
-    }
-    .popup .close {
-        font-size: 13px;
-        width: 20px;
-        height: 20px;
-    }
-    #btn-check {
-        width: 12rem;
-        margin-bottom: 8px;
-    }
-    input[type=text], select, textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        resize: vertical;
-        font-size: 0.8rem;
-    }
-    label {
-        font-size: 0.8rem;
-        color: white;
-    }
 }
 
 .btn-primary {
@@ -354,7 +293,7 @@ label {
 /* Win Streak */
 
 .container-winstreak {
-    position: absolute;
+    position: fixed;
     padding: 10px 20px;
     bottom: 0px;
     left: 0px;
@@ -368,18 +307,93 @@ label {
     color: #EDC967;
 }
 
+/* MyQuote */
+
+#myQuote {
+    font-size: 1.5rem !important;
+}
+
+#userOutput {
+    color: #ffffff;
+}
+
 /* Dropdown Boxes */
-.select2-container .select2-selection{
+
+.form-control {
     height: 34px !important;
     width: 400px !important;
 }
 
-.select2-dropdown{
-    height: 34px !important;
-    width: 400px !important;
+/* Responsive layout - when the screen is more than 1000px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (min-width: 1000px) {
+    .popup .content {
+        width: 50%;
+    }
 }
 
-#select2-characterName-container {
-    height: 34px !important;
-    width: 400px !important;
+/* Responsive layout - when the screen is less than 600px wide */
+
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        margin-top: 0;
+    }
+    .popup .content {
+        width: 80%;
+    }
+    .image__title {
+        font-size: 3rem;
+    }
+    .container-winstreak {
+        width: 100%;
+        border-radius: 0px 0px 0px 0px !important;
+        position: absolute;
+    }
+    #winstreak {
+        font-size: 0.8rem !important;
+    }
+    #highest-winstreak {
+        font-size: 0.8rem !important;
+    }
+    #startButtonCss {
+        font-size: 6vh;
+    }
+    .popup .content {
+        transform: translate(-50%, -150%) scale(0);
+        width: 90%;
+        height: 26rem;
+        z-index: 2;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        background: #292b2c;
+        z-index: 1;
+    }
+    .popup .close {
+        font-size: 13px;
+        width: 20px;
+        height: 20px;
+    }
+    #btn-check {
+        width: 7rem;
+        margin-bottom: 8px;
+    }
+    label {
+        font-size: 0.8rem;
+        color: white;
+    }
+    /* MyQuote */
+    #myQuote {
+        font-size: 1rem !important;
+    }
+    /* Combo boxes */
+    .form-control {
+        height: 34px !important;
+        width: 180px !important;
+    }
+    /* Notepad */
+    #noteText {
+        width: 220px;
+        height: 70px;
+    }
 }

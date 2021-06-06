@@ -1,10 +1,9 @@
 src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js";
 src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js";
 src = "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js";
-src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
-src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-const fetch = require('node-fetch');
+src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js";
+src = "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -13,7 +12,6 @@ function getRandomInt(max) {
 var token = "L-r_2iO5N7DkmeeHq1V6";
 var uri = "https://the-one-api.dev/v2";
 
-
 // togglePopup
 function togglePopup() {
     document.getElementById("popup-1")
@@ -21,7 +19,7 @@ function togglePopup() {
 }
 
 // call API
-async function callAPI(path) {
+/* async function callAPI(path) {
     let response = await fetch(`${uri}/${path}`, {
         headers: {
             'Accept': 'application/json',
@@ -30,63 +28,100 @@ async function callAPI(path) {
     })
     let data = await response.json();
     return data;
-}
-// callAPI("movie").then(data => console.log(data));
+} */
 
-// get quote
+//call API 
+async function callAPI(path) {
+    console.log("running callAPI with path= ", path)
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", uri + "/" + path, false); // false for synchronous request
+    xmlHttp.setRequestHeader("Authorization", "Bearer " + token)
+    xmlHttp.setRequestHeader("Accept", "application/json")
+    xmlHttp.send(null);
+    let data = await xmlHttp;
+    console.log(JSON.parse(data.response))
+    data = JSON.parse(data.response)
+    return data
+}
+
+var quoteCharacter;
+var quoteMovie;
+var randomInt;
+// get quote 
 function getQuote() {
-    var randomInt = getRandomInt(67);
-    callAPI("quote").then(data => {      
-        var randomQuote = data.docs[randomInt].dialog;     
-        console.log(randomQuote);  
-        // document.getElementById("myQuote").innerHTML = randomQuote; 
-        document.getElementById("myQuote").innerHTML = "test";
+    randomInt = getRandomInt(1000);
+    callAPI("quote").then(data => {
+        randomQuote = data.docs[randomInt].dialog;
+        quoteCharacter = data.docs[randomInt].character;
+        quoteMovie = data.docs[randomInt].movie;
+        document.getElementById("myQuote").innerHTML = randomQuote;
     });
 }
 
 var allCharacters = [];
+var characterBox;
 function getCharacters() {
-    var characterBox = document.getElementById("characterName");
-    callAPI("character").then(data => {
-        for (i = 0; i < data.docs.length; i++) {
-            allCharacters[i] = (data.docs[i].name);
-        } 
-        console.log(allCharacters.length);   
+    characterBox = document.getElementById("characterName");
+    
+    var allCharactersResponse = callAPI("character").then(data => {
+        allCharacters = data.docs
+
+        for (var i in allCharacters) {
+            var option = document.createElement("option");
+            option.value = allCharacters[i]._id;
+            option.text = allCharacters[i].name;
+
+            characterBox.appendChild(option);
+        }
     });
-    // var allCharactersResponse = callAPI("character").then(data => { });
-    // let allCharacters = await allCharactersResponse.json();
-    // console.log(allCharacters);
-
-    for (var i in allCharacters) {
-        var option = document.createElement("option");
-        option.value = allCharacters[i].name;
-        option.text = allCharacters[i].name;
-
-        characterBox.appendChild(option);
-    }
 }
 
-// async function getMovies() {
-//     var movieBox = document.getElementById("movieName");
-//     var allMoviesResponse = callAPI("movie").then(data => { });
-//     let allMovies = await allMoviesResponse.json();
-//     console.log(allMovies);
+var allMovies = [];
+var movieBox;
+function getMovies() {
+    movieBox = document.getElementById("movieName");
 
-//     for (var i in allMovies) {
-//         var option = document.createElement("option");
-//         option.value = allMovies[i].name;
-//         option.text = allMovies[i].name;
+    var allMoviesResponse = callAPI("movie").then(data => {
+        allMovies = data.docs
 
-//         movieBox.appendChild(option);
-//     }
-// }
-// getMovies();
+        for (var i in allCharacters) {
+            var option = document.createElement("option");
+            option.value = allMovies[i]._id;
+            option.text = allMovies[i].name;
+
+            movieBox.appendChild(option);
+        }
+    });
+}
+
+//check quote
+function checkQuote() {
+    if(characterBox.value == quoteCharacter && movieBox.value == quoteMovie) {
+        document.getElementById("userOutput").innerHTML = "Correct!";
+        document.getElementById("userOutput").style.color = "#00ff00"; //groen
+        winstreakCorrect();
+    }
+    else if(characterBox.value == quoteCharacter && !(movieBox.value == quoteMovie)) {
+        document.getElementById("userOutput").innerHTML = "Het character is correct maar niet de juiste film.";
+        document.getElementById("userOutput").style.color = "#ffa500"; //orange
+    }
+    else if(!(characterBox.value == quoteCharacter) && movieBox.value == quoteMovie) {
+        document.getElementById("userOutput").innerHTML = "De film is correct maar niet de juiste character.";
+        document.getElementById("userOutput").style.color = "#ffa500"; //orange
+    }
+    else {
+        document.getElementById("userOutput").innerHTML = "Incorrect.";
+        document.getElementById("userOutput").style.color = "#ff0000"; //rood
+        winstreakWrong();
+    }
+}
 
 // Notepad show / hide
 var notepadStatus;
 function show_hide_notepad() {
     if (notepadStatus == 1) {
         document.getElementById("notepad").style.display = "inline";
+
         return notepadStatus = 0;
     }
     else {
@@ -133,4 +168,3 @@ function winstreakWrong() {
     winstreakScore = 0;
     document.getElementById("winstreak").innerHTML = ("Winstreak: " + winstreakScore);
 }
-

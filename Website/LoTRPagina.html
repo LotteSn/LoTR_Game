@@ -27,6 +27,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
+    <div id="backgroundImage">
+        <img class="img-responsive" src="../Website/img/Voorbeeld_background2.jpg" alt="Background image">
+    </div>
     <!-- Navigatie Menu -->
     <nav class="navbar bg-dark navbar-dark navbar-expand-lg navbar-custom">
         <div class="container-fluid">
@@ -57,10 +60,6 @@
         </div>
     </nav>
 
-    <div id="backgroundImage">
-        <img class="img-responsive" src="../Website/img/Voorbeeld_background2.jpg" alt="Second slide">
-    </div>
-
     <!-- Winstreak -->
     <div class="container-winstreak">
         <div class="bottomleft">
@@ -74,8 +73,10 @@
         <div class="popup" id="popup-1">
             <div class="content">
                 <div class="close" onclick="togglePopup()"><a href="#">X</a></div>
-                <h1 id="myQuote">Quote</h1>
-                <form>
+                <br>
+                <h6 id="myQuote">Quote
+                </h6>
+                <form id="formQuote">
                     <div class="row">
                         <div class="col-25">
                             <label for="characterName">By: </label>
@@ -84,12 +85,9 @@
                             <div class="row">
                                 <form>
                                     <select id="characterName" class="form-control select2">
-                                       <option>Frodo</option> 
-                                       <option>Sam</option> 
-                                       <option>Gandalf</option> 
                                     </select>
                                 </form>
-                             </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -100,20 +98,20 @@
                             <div class="row">
                                 <form>
                                     <select id="movieName" class="form-control select2">
-                                       <option>The two towers</option> 
                                     </select>
                                 </form>
-                             </div>
+                            </div>
                         </div>
                     </div>
                 </form><br>
-                <input onclick="winstreakCorrect()" id="btn-check" class="btn" type="button" value="Check">
+                <input onclick="checkQuote();getQuote();" id="btn-check" class="btn" type="button" value="Check">
                 <a href="https://lotr.fandom.com/wiki/Main_Page" target="_blank"><input id="btn-check" class="btn"
                         type="button" value="Help"></a>
-                <input onclick="show_hide_notepad();test();" id="btn-check" class="btn" type="button" value="Notepad">
+                <input onclick="show_hide_notepad();" id="btn-check" class="btn" type="button" value="Notepad">
                 <p></p>
+                <h6 id="userOutput">Succes!</h6>
                 <form id="notepad">
-                    <textarea rows=4 id="noteText"></textarea><br>
+                    <textarea rows="6" cols="80" id="noteText"></textarea><br>
                     <input class="btn" type="reset" value="clear">
                 </form>
             </div>
@@ -124,7 +122,8 @@
     <div class="container" id="startButtonContainer">
         <div class="row">
             <div class="col text-center">
-                <button onclick="togglePopup();getQuote();getCharacters();" class="btn btn-start" id="startButtonCss">Start Game</button>
+                <button onclick="togglePopup();getQuote();getCharacters();getMovies();" class="btn btn-start"
+                    id="startButtonCss">Start Game</button>
             </div>
         </div>
     </div>
@@ -134,7 +133,7 @@
         //Winstreak score
         var winstreakScore = 0;
         var highestWinstreakScore = 0;
-
+        //Comboboxes
         $('.select2').select2();
     </script>
 </body>
