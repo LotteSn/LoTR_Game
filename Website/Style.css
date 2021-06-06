@@ -2,15 +2,6 @@ body {
     height: fit-content !important;
 }
 
-#myQuote {
-    color: white;
-}
-
-/* #fromContainer {
-    background-color: gray;
-    opacity: 0.5;
-} */
-
 /*ALL*/
 
 /*ALL BUTTONS*/
@@ -127,15 +118,31 @@ body {
     text-shadow: 2px 2px #000000;
 }
 
+/* Modal Log-in - Register */
+
+.modal-body h1 {
+    color: #ffffff;
+}
+
+.modal a {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.modal a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 /*LOTR PAGE*/
 
-/*START BUTTON*/
+/*START BUTTONS*/
 
 #startButtonCss {
-    padding: 4vh 6vh;
-    margin-top: 50%;
-    font-size: 8vh;
-    font-weight: 700;
+    padding: 4vh 4vh;
+    margin-top: 30%;
+    font-size: 6vh;
+    font-weight: 600;
     border-radius: 20px;
 }
 
@@ -154,18 +161,6 @@ body {
     /* laten staan anders komt voor button */
 }
 
-/* @media only screen and (max-width: 600px) {
-    .img-responsive {
-        height: 100%;
-        width: 100%;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-size: cover;
-    }
-} */
-
 /* Plaats de quote pop up in het midden van de pagina en Make up */
 
 .popup .content {
@@ -173,7 +168,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -150%) scale(0);
-    width: 60%;
+    width: 50%;
     height: 28rem;
     z-index: 2;
     text-align: center;
@@ -211,19 +206,6 @@ body {
     transform: translate(-50%, -50%) scale(1);
 }
 
-#formTitel {
-    position: absolute;
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    color: #ffffff !important;
-}
-
-#footer {
-    bottom: 0 !important;
-}
 
 #btn-check {
     width: 12rem;
@@ -261,35 +243,6 @@ label {
     padding: 0.5rem 5rem !important;
 }
 
-/* Error pagina CSS */
-
-#ErrorMessage {
-    margin: 20%;
-    color: #EDC967;
-}
-
-#YouFoolBackground {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    overflow: hidden;
-}
-
-/* Modal Log-in - Register */
-
-.modal-body h1 {
-    color: #ffffff;
-}
-
-.modal a {
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.modal a:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
-
 /* Win Streak */
 
 .container-winstreak {
@@ -311,6 +264,7 @@ label {
 
 #myQuote {
     font-size: 1.5rem !important;
+    color: white;
 }
 
 #userOutput {
